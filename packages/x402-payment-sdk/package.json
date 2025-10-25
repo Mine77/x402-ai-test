@@ -1,0 +1,77 @@
+{
+  "name": "@x402/payment-sdk",
+  "version": "1.0.0",
+  "description": "X402 payment SDK for MCP servers and HTTP APIs with async settlement optimization",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./mcp": {
+      "types": "./dist/mcp/index.d.ts",
+      "import": "./dist/mcp/index.mjs",
+      "require": "./dist/mcp/index.js"
+    },
+    "./http": {
+      "types": "./dist/http/index.d.ts",
+      "import": "./dist/http/index.mjs",
+      "require": "./dist/http/index.js"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.mjs",
+      "require": "./dist/core/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "x402",
+    "payment",
+    "mcp",
+    "model-context-protocol",
+    "crypto",
+    "ethereum",
+    "base"
+  ],
+  "author": "X402 Team",
+  "license": "MIT",
+  "dependencies": {
+    "@coinbase/x402": "^0.5.1",
+    "@modelcontextprotocol/sdk": "^1.20.2",
+    "mcp-handler": "^1.0.3",
+    "viem": "^2.37.3",
+    "x402": "^0.6.6",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "eslint": "^8",
+    "tsup": "^8",
+    "typescript": "^5",
+    "vitest": "^1"
+  },
+  "peerDependencies": {
+    "next": ">=13.0.0"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
+  }
+}
